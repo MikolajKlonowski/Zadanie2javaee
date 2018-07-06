@@ -15,9 +15,6 @@
 <h1> Przelicznik tekstu</h1>
     <textarea name="tekst" placeholder="Podaj tekst"></textarea><br>
 <input type="submit" value="Prześlij tekst do analizy">
-
-
-
   </form>
   </body>
 </html>

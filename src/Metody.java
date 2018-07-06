@@ -2,15 +2,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Metody {
-    public int liczenieZNakowBezSPacji(String tekst) {
-        String in = tekst;
-        int i = 0;
+    public int liczenieZnakowBezSpacji(String tekst) {
+        int iloscSpacji = 0;
         Pattern p = Pattern.compile(" ");
-        Matcher m = p.matcher(in);
+        Matcher m = p.matcher(tekst);
         while (m.find()) {
-            i++;
+            iloscSpacji++;
         }
-        return tekst.length() - i;
+        return tekst.length() - iloscSpacji;
     }
 
     public int liczenieWszystkichZnakow(String tekst) {
@@ -18,20 +17,17 @@ public class Metody {
     }
 
     public int liczenieSlow(String tekst) {
-        String sample = tekst;
-        char[] arraysample = sample.toCharArray();
-        int i = 0;
-        String a = " ";
+        char[] arraysample = tekst.toCharArray();
+        int iloscSlow = 0;
         for (char c : arraysample) {
-            switch (c) {
-                case ' ':
-                    i++;
+            if (c == ' ') {
+                iloscSlow++;
             }
         }
-        return i + 1;
+        return iloscSlow + 1;
     }
 
-    public boolean czyTekstJestPolidromem(String tekst) {
+    public boolean sprawdzanieCzyTekstJestPolidromem(String tekst) {
         char[] arraysample = tekst.toCharArray();
         int i = tekst.length();
         for (int j = 0; j < i; j++) {
